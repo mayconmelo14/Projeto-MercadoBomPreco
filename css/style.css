@@ -1,0 +1,147 @@
+/* #region global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    min-height: 44px;
+    padding: 12px 20px;
+}
+
+html {
+    background-color: var(--background-color);
+}
+
+/* Temas */
+:root {
+    /* Cores Principais */
+    --primary-color: #2E7D32;
+    --primary-light: #4CAF50;
+    --primary-dark: #1B5E20;
+
+    /* Destaques e Promoções */
+    --accent-color: #FFC107;
+    --accent-dark: #FFA000;
+
+    /* Fundo */
+    --background-color: #F5F5F5;
+    --surface-color: #FFFFFF;
+
+    /* Texto */
+    --text-primary: #212121;
+    --text-secondary: #616161;
+    --text-light: #FFFFFF;
+
+    /* Bordas */
+    --border-color: #E0E0E0;
+
+    /* Estados */
+    --success-color: #43A047;
+    --error-color: #D32F2F;
+    --warning-color: #FB8C00;
+    --info-color: #0288D1;
+
+    /* Sombras */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* #endregion */
+
+/* #region Header */
+.header {
+    background-color: gray;
+
+    width: 100%;
+    height: 70px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .logo {
+        width: 120px;
+        height: 40px;
+        margin-right: auto;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .cart {
+        background-color: white;
+
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            font-size: 1.5rem;
+        }
+    }
+
+    .menu {
+        background-color: white;
+        
+        border-radius: 10px;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i{
+            font-size: 1.5rem;
+        }
+    }
+}
+
+/* #endregion */
+
+/* #region Search */
+.search-section {
+    background-color: lightgray;
+
+    width: 100%;
+    padding: 16px;
+    
+    .search-box {
+        background-color: white;
+
+        width: 100%;
+        height: 48px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0 12px;
+
+        i {
+            background-color: lightgray;
+            
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            background: transparent;
+
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+    }
+}
+
+/* #endregion */
