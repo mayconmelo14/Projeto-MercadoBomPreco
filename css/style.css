@@ -14,16 +14,28 @@ html {
     background-color: var(--background-color);
 }
 
+i{
+    color: var(--icon-color);
+}
+
 /* Temas */
 :root {
     /* Cores Principais */
-    --primary-color: #2E7D32;
-    --primary-light: #4CAF50;
-    --primary-dark: #1B5E20;
+    --primary-color: #2562EB;
+    --primary-light: #2560ebc7;
+    --primary-dark: #1E40AF;
+
+    /* Secundárias */
+    --secondary-color: #E63946;
+    --secondary-light: #D62839;
+    --secondary-dark: #a0111f;
+
+    /* Ícones */
+    --icon-color: #FFFFFF;
 
     /* Destaques e Promoções */
-    --accent-color: #FFC107;
-    --accent-dark: #FFA000;
+    --offer-color: #FFC107;
+    --offer-dark: #FFA000;
 
     /* Fundo */
     --background-color: #F5F5F5;
@@ -51,7 +63,7 @@ html {
 
 /* #region Header */
 .header {
-    background-color: gray;
+    background-color: var(--primary-color);
 
     width: 100%;
     height: 70px;
@@ -61,10 +73,12 @@ html {
     gap: 16px;
 
     .logo {
-        width: 120px;
+        width: 80px;
         height: 40px;
         margin-right: auto;
-
+        background-color: var(--background-color);
+        border-radius: 10px;
+        
         img{
             width: 100%;
             height: 100%;
@@ -73,8 +87,9 @@ html {
     }
 
     .cart {
-        background-color: white;
-
+        background-color: var(--primary-dark);
+        
+        border-radius: 10px;
         width: 44px;
         height: 44px;
         display: flex;
@@ -87,7 +102,7 @@ html {
     }
 
     .menu {
-        background-color: white;
+        background-color: var(--primary-dark);
         
         border-radius: 10px;
         width: 44px;
@@ -106,13 +121,13 @@ html {
 
 /* #region Search */
 .search-section {
-    background-color: lightgray;
+    background-color: var(--border-color);
 
     width: 100%;
     padding: 16px;
     
     .search-box {
-        background-color: white;
+        background-color: var(--surface-color);
 
         width: 100%;
         height: 48px;
@@ -123,7 +138,7 @@ html {
         padding: 0 12px;
 
         i {
-            background-color: lightgray;
+            color: var(--text-primary);
             
             width: 24px;
             height: 24px;
@@ -134,7 +149,7 @@ html {
 
         input {
             background: transparent;
-
+            
             width: 100%;
             height: 100%;
             border: none;
