@@ -50,8 +50,8 @@ i {
     --icon-color: #FFFFFF;
 
     /* Destaques e Promoções */
-    --offer-color: #FFC107;
-    --offer-dark: #FFA000;
+    --offer-color: ;
+    --offer-dark: ;
 
     /* Fundo */
     --background-color: #F5F5F5;
@@ -92,6 +92,7 @@ i {
     .logo {
         width: 80px;
         height: 40px;
+        margin-left: 32px;
         margin-right: auto;
         background-color: var(--background-color);
         border-radius: 10px;
@@ -139,13 +140,11 @@ i {
 /* #region Search */
 .search-section {
     background-color: var(--border-color);
-
     width: 100%;
     padding: 16px;
 
     .search-box {
         background-color: var(--surface-color);
-
         width: 100%;
         height: 48px;
         border-radius: 8px;
@@ -154,21 +153,32 @@ i {
         gap: 12px;
         padding: 0 12px;
 
+        button {
+            background: transparent;
+            border: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         i {
             color: var(--text-primary);
-
             width: 24px;
             height: 24px;
+            font-size: 24px;
+            /* Garante que o ícone fique no tamanho certo */
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-shrink: 0;
+            /* Impede o ícone de amassar */
         }
 
         input {
             background: transparent;
-
             color: var(--text-primary);
-            width: 100%;
+            flex: 1;
             height: 100%;
             border: none;
             outline: none;
@@ -177,14 +187,59 @@ i {
     }
 }
 
+
 /* #endregion */
 
 /* #region Banner */
-.hero {
-    background-color: #212121;
-
+.banner-section {
     width: 100%;
-    height: 300px;
+    padding: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+
+    .swiper {
+        width: 100%;
+        height: 400px;
+
+        @media (max-width: 768px) {
+            height: 220px;
+        }
+    }
+
+    .swiper-slide {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .swiper-pagination {
+        bottom: 12px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            opacity: 0.5;
+            margin: 0 !important;
+            transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+
+            &.swiper-pagination-bullet-active {
+                opacity: 1;
+                transform: scale(1.2);
+                background-color: var(--icon-color);
+            }
+        }
+    }
 
 }
 
@@ -192,7 +247,6 @@ i {
 
 /* #region Categories */
 .categories-section {
-    padding: 24px 0;
 
     .category-card {
         display: flex;
@@ -228,34 +282,322 @@ i {
 
 /* #region Featureds */
 
-.product-card {
-    text-align: center;
+.products-carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 16px 1rem;
 
-    .product-card img {
-        height: 140px;
-        object-fit: contain;
-        padding: 12px;
+    .product-card {
+        text-align: center;
+        flex: 0 0 250px;
+        scroll-snap-align: center;
+
+        img {
+            height: 140px;
+            object-fit: contain;
+            padding: 12px;
+        }
 
         .card-body {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            align-items: start;
+            text-align: left;
+            gap: 4px;
 
             .card-title {
+                margin-bottom: 0;
                 font-size: 1rem;
                 font-weight: 600;
-                min-height: 48px;
+                color: var(--text-primary);
+            }
+
+            .card-text {
+                margin-bottom: 16px;
+                color: var(--text-secondary);
+                font-size: 0.875rem;
             }
 
             .product-price {
                 font-size: 1.25rem;
                 font-weight: 700;
                 color: var(--primary-color);
+                margin-bottom: 12px;
+
+                span {
+                    color: var(--text-secondary);
+                    text-decoration: line-through;
+                    font-size: 0.9rem;
+                    margin-right: 8px;
+                }
+            }
+
+            .btn-primary {
+                width: 100%;
+                transition: .5s;
+
+                i {
+                    transition: .5s;
+                }
+            }
+
+            .btn-primary:hover {
+                color: var(--primary-dark);
+                background-color: var(--primary-light);
+                font-weight: 600;
+                transition: .5s;
+
+                i {
+                    color: var(--primary-dark);
+                    transition: .5s;
+                }
+            }
+        }
+    }
+}
+
+/* #endregion */
+
+/* #region Offers */
+.offers {
+    padding: 16px;
+    width: 100%;
+
+    .offer-banners-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        margin-top: 16px;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
+    }
+
+    .offer-banner {
+        flex: 1;
+        padding: 24px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 120px;
+    }
+}
+
+/* #endregion */
+
+/* #region TopDeals */
+.top-deals-section {
+    padding: 16px;
+    width: 100%;
+
+    .deals-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 16px;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    .deal-item {
+        background-color: var(--surface-color);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+
+        @media (min-width: 768px) {
+            width: calc(50% - 6px);
+            /* Divide em 2 colunas no tablet */
+        }
+
+        @media (min-width: 1024px) {
+            width: calc(25% - 9px);
+            /* Divide em 4 colunas no computador */
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .deal-info {
+            flex: 1;
+
+            h4 {
+                font-size: 0.95rem;
+                margin: 0 0 2px 0;
+                color: var(--text-primary);
+                font-weight: 600;
+            }
+
+            p {
                 margin: 0;
+                font-size: 0.9rem;
+                color: #0d6efd;
+                font-weight: bold;
             }
         }
 
+        .btn {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+
+            i {
+                font-size: 1.2rem;
+            }
+        }
     }
 }
+
+/* #endregion */
+
+/* #region Benefits */
+
+.benefits {
+    padding: 32px 16px;
+    width: 100%;
+
+    .benefit-card {
+        background-color: var(--surface-color);
+        padding: 20px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        height: 100%;
+
+        i {
+            font-size: 32px;
+            color: #0d6efd;
+            /* Azul padrão do Bootstrap, mude se quiser */
+        }
+
+        h5 {
+            margin: 0 0 4px 0;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.cta {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos') center/cover no-repeat;
+    padding: 60px 16px;
+    width: 100%;
+}
+
+/* #endregion */
+
+/* #region Footer */
+.footer {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    width: 100%;
+
+    .footer-logo {
+        width: 80px;
+        height: 40px;
+        background-color: var(--background-color);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 16px auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+
+    h5 {
+        color: var(--text-light) !important;
+        font-weight: 600;
+    }
+
+    p,
+    span {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7) !important;
+        transition: color 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+            color: var(--text-light) !important;
+            transform: translateX(3px);
+        }
+    }
+
+    .footer-social a {
+        color: var(--text-light) !important;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .footer-payments {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        img {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+        }
+
+        i {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: var(--text-light);
+            width: 38px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+    }
+
+    hr {
+        border-color: rgba(255, 255, 255, 0.15) !important;
+        opacity: 1;
+    }
+
+    .copyright-section {
+        color: var(--text-light);
+        padding: 16px 0;
+        margin-top: 24px;
+    }
+}
+
 
 /* #endregion */
