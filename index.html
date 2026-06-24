@@ -33,11 +33,42 @@
         <div class="logo">
             <img src="./img/Logo.png" alt="Bom Preço">
         </div>
-        <div class="cart">
+        <div class="cart" id="cart-toggle">
             <i class='bx bxs-cart'></i>
         </div>
-        <div class="menu">
+        <div class="menu" id="menu-toggle">
             <i class='bx bx-menu'></i>
+        </div>
+
+        <nav class="dropdown-menu" id="dropdown-menu">
+            <ul>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Ofertas do Dia</a></li>
+                <li><a href="#">Meus Pedidos</a></li>
+                <hr>
+                <li class="login-item">
+                    <a href="./login.html" class="btn-entrar">Entrar / Cadastrar</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-header">
+                <h3>Meu Carrinho</h3>
+                <i class='bx bx-x' id="cart-close"></i>
+            </div>
+
+            <div class="cart-items">
+
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span>R$ 0,00</span>
+                </div>
+                <button class="btn-finalizar">Finalizar Compra</button>
+            </div>
         </div>
     </header>
 
@@ -59,13 +90,13 @@
             <div class="swiper bannerSwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="..." alt="Banner 1">
+                        <img src="./img/Banner1.png" alt="Frete Grátis">
                     </div>
                     <div class="swiper-slide">
-                        <img src="..." alt="Banner 2">
+                        <img src="./img/Banner2.png" alt="Quarta-Feira de Ofertas">
                     </div>
                     <div class="swiper-slide">
-                        <img src="..." alt="Banner 3">
+                        <img src="..." alt="Cartão Bom Preço">
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -76,7 +107,6 @@
         <!-- Categorias -->
         <section class="categories-section">
             <div class="section-header">
-                <hr>
                 <h2 class="section-title">Categorias</h2>
             </div>
 
@@ -112,7 +142,7 @@
                 <div class="col">
                     <a href="#" class="category-card text-decoration-none text-dark">
                         <div class="category-icon">
-                            <i class="bx bxs-food-menu"></i>
+                            <i class="bx bxs-fridge"></i>
                         </div>
                         <p class="mb-0">Carnes</p>
                     </a>
@@ -160,7 +190,7 @@
         <!-- Produtos em Destaque -->
         <section class="featured-products">
             <div class="section-header">
-                <hr>
+
                 <h2 class="section-title">Produtos em Destaque</h2>
             </div>
 
@@ -177,13 +207,15 @@
                     </div>
                 </div>
                 <!-- Card Real -->
-                <div class="card product-card card-real d-none" style="width: 14rem;">
+                <div class="card product-card card-real d-none" style="width: 14rem;" data-id="sprite-350"
+                    data-name="Sprite 350ml" data-price="3.99" data-img="./img/Produtos/Sprite-Lata.png">
                     <img src="./img/Produtos/Sprite-Lata.png" class="card-img-top" alt="Sprite">
                     <div class="card-body">
                         <h5 class="card-title">Sprite 350ml</h5>
                         <p class="card-text">Lata - Limão</p>
                         <p class="product-price">R$ 3,99</p>
-                        <a href="#" class="btn btn-primary">Adicionar ao Carrinho <i class='bx bxs-cart-add'></i></a>
+                        <a href="#" class="btn btn-primary btn-add-to-cart">Adicionar ao Carrinho <i
+                                class='bx bxs-cart-add'></i></a>
                     </div>
                 </div>
 
@@ -198,13 +230,15 @@
                     </div>
                 </div>
                 <!-- Card Real -->
-                <div class="card product-card card-real d-none" style="width: 14rem;">
+                <div class="card product-card card-real d-none" style="width: 14rem;" data-id="Arroz-Camil"
+                    data-name="Arroz Camil 5kg" data-price="21.99" data-img="./img/Produtos/Arroz.webp">
                     <img src="./img/Produtos/Arroz.webp" class="card-img-top" alt="Arroz Camil">
                     <div class="card-body">
                         <h5 class="card-title">Arroz Camil 5kg</h5>
                         <p class="card-text">Tipo 1</p>
                         <p class="product-price"><span>R$ 25,99</span> R$ 21,99</p>
-                        <a href="#" class="btn btn-primary">Adicionar ao Carrinho <i class='bx bxs-cart-add'></i></a>
+                        <a href="#" class="btn btn-primary btn-add-to-cart">Adicionar ao Carrinho <i
+                                class='bx bxs-cart-add'></i></a>
                     </div>
                 </div>
 
@@ -219,13 +253,15 @@
                     </div>
                 </div>
                 <!-- Card Real -->
-                <div class="card product-card card-real d-none" style="width: 14rem;">
+                <div class="card product-card card-real d-none" style="width: 14rem;" data-id="Cafe-Pilao"
+                    data-name="Café Pilão" data-price="23.99" data-img="./img/Produtos/Café.webp">
                     <img src="./img/Produtos/Café.webp" class="card-img-top" alt="Café Pilão">
                     <div class="card-body">
                         <h5 class="card-title">Café Pilão</h5>
                         <p class="card-text">Tradicional 500g</p>
                         <p class="product-price"><span>R$ 30,99</span>R$ 23,99</p>
-                        <a href="#" class="btn btn-primary">Adicionar ao Carrinho <i class='bx bxs-cart-add'></i></a>
+                        <a href="#" class="btn btn-primary btn-add-to-cart">Adicionar ao Carrinho <i
+                                class='bx bxs-cart-add'></i></a>
                     </div>
                 </div>
 
@@ -240,13 +276,15 @@
                     </div>
                 </div>
                 <!-- Card Real -->
-                <div class="card product-card card-real d-none" style="width: 14rem;">
+                <div class="card product-card card-real d-none" style="width: 14rem;" data-id="Monster-473"
+                    data-name="Monster 473ml" data-price="15.99" data-img="./img/Produtos/Monster-Lata.png">
                     <img src="./img/Produtos/Monster-Lata.png" class="card-img-top" alt="Monster">
                     <div class="card-body">
                         <h5 class="card-title">Monster 473ml</h5>
                         <p class="card-text">Lata - Tradicional</p>
                         <p class="product-price"><span>R$ 21,99</span>R$ 15,99</p>
-                        <a href="#" class="btn btn-primary">Adicionar ao Carrinho <i class='bx bxs-cart-add'></i></a>
+                        <a href="#" class="btn btn-primary btn-add-to-cart">Adicionar ao Carrinho <i
+                                class='bx bxs-cart-add'></i></a>
                     </div>
                 </div>
 
@@ -261,13 +299,15 @@
                     </div>
                 </div>
                 <!-- Card Real -->
-                <div class="card product-card card-real d-none" style="width: 14rem;">
+                <div class="card product-card card-real d-none" style="width: 14rem;" data-id="Leite-1l"
+                    data-name="Leite Integral Italac 1L" data-price="7.49" data-img="./img/Produtos/Leite.webp">
                     <img src="./img/Produtos/Leite.webp" class="card-img-top" alt="Leite UHT Italac">
                     <div class="card-body">
                         <h5 class="card-title">Leite UHT Italac</h5>
                         <p class="card-text">Integral 1L</p>
                         <p class="product-price"><span>R$ 9,99</span>R$ 7,49</p>
-                        <a href="#" class="btn btn-primary">Adicionar ao Carrinho <i class='bx bxs-cart-add'></i></a>
+                        <a href="#" class="btn btn-primary btn-add-to-cart">Adicionar ao Carrinho <i
+                                class='bx bxs-cart-add'></i></a>
                     </div>
                 </div>
 
@@ -278,7 +318,6 @@
         <!-- Ofertas -->
         <section class="offers">
             <div class="section-header">
-                <hr>
                 <h2 class="section-title">Ofertas Imperdíveis</h2>
             </div>
             <div class="offer-banners-container">
@@ -299,7 +338,6 @@
             </div>
         </section>
 
-        <!-- Mais Procurados -->
         <section class="top-deals-section">
             <div class="section-header">
                 <hr>
@@ -308,46 +346,50 @@
 
             <div class="deals-list">
 
-                <div class="deal-item">
+                <div class="deal-item product-card" data-id="sprite-350" data-name="Sprite 350ml" data-price="3.99"
+                    data-img="./img/Produtos/Sprite-Lata.png">
                     <img src="./img/Produtos/Sprite-Lata.png" alt="Sprite">
                     <div class="deal-info">
                         <h4>Sprite 350ml</h4>
                         <p>R$ 3,99</p>
                     </div>
-                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle">
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle btn-add-to-cart">
                         <i class='bx bx-plus'></i>
                     </a>
                 </div>
 
-                <div class="deal-item">
+                <div class="deal-item product-card" data-id="arroz-5kg" data-name="Arroz Camil 5kg" data-price="21.99"
+                    data-img="./img/Produtos/Arroz.webp">
                     <img src="./img/Produtos/Arroz.webp" alt="Arroz">
                     <div class="deal-info">
                         <h4>Arroz Camil 5kg</h4>
                         <p>R$ 21,99</p>
                     </div>
-                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle">
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle btn-add-to-cart">
                         <i class='bx bx-plus'></i>
                     </a>
                 </div>
 
-                <div class="deal-item">
+                <div class="deal-item product-card" data-id="cafe-500g" data-name="Café Pilão 500g" data-price="23.99"
+                    data-img="./img/Produtos/Café.webp">
                     <img src="./img/Produtos/Café.webp" alt="Café">
                     <div class="deal-info">
                         <h4>Café Pilão 500g</h4>
                         <p>R$ 23,99</p>
                     </div>
-                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle">
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle btn-add-to-cart">
                         <i class='bx bx-plus'></i>
                     </a>
                 </div>
 
-                <div class="deal-item">
+                <div class="deal-item product-card" data-id="monster-473" data-name="Monster 473ml" data-price="15.99"
+                    data-img="./img/Produtos/Monster-Lata.png">
                     <img src="./img/Produtos/Monster-Lata.png" alt="Monster">
                     <div class="deal-info">
                         <h4>Monster 473ml</h4>
                         <p>R$ 15,99</p>
                     </div>
-                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle">
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle btn-add-to-cart">
                         <i class='bx bx-plus'></i>
                     </a>
                 </div>
@@ -388,11 +430,13 @@
             </div>
         </section>
 
-        <section class="cta text-white text-center">
-            <div class="cta-content">
-                <h2>Faça seu primeiro pedido hoje!</h2>
-                <p>Ganhe frete grátis na sua primeira compra acima de R$ 50.</p>
-                <a href="#" class="btn btn-light btn-lg fw-bold mt-2">Criar Conta Agora</a>
+        <section id="contato" class="contact-section container my-5">
+            <div class="contact-card">
+                <h4>Precisando de Ajuda?</h4>
+                <p>Fale com o nosso suporte via WhatsApp. Atendimento rápido de Seg. a Sáb. das 8h às 20h.</p>
+                <a href="https://wa.me/5500000000000" target="_blank" class="btn-whatsapp">
+                    <i class='bx bxl-whatsapp'></i> Chamar no WhatsApp
+                </a>
             </div>
         </section>
 
@@ -458,6 +502,23 @@
         </div>
     </footer>
 
+    <!-- Toast Carrinho -->
+    <div class="toast-notification" id="toast-notification">
+        <i class='bx bx-check-circle'></i>
+        <span>Item adicionado ao carrinho com sucesso!</span>
+    </div>
+
+    <!-- Modal Carrinho -->
+    <div class="delete-modal" id="delete-modal">
+        <div class="modal-content">
+            <h4>Remover item?</h4>
+            <p>Você tem certeza que deseja remover este produto do carrinho?</p>
+            <div class="modal-actions">
+                <button class="btn-cancel" id="btn-cancel-delete">Cancelar</button>
+                <button class="btn-confirm" id="btn-confirm-delete">Remover</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Script Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
