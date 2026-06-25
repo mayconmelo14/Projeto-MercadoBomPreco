@@ -42,9 +42,36 @@
 
         <nav class="dropdown-menu" id="dropdown-menu">
             <ul>
-                <li><a href="#">Categorias</a></li>
-                <li><a href="#">Ofertas do Dia</a></li>
-                <li><a href="#">Meus Pedidos</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contato">Meus Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#offers">Ofertas do Dia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#topdeals">Mais Vendidos</a>
+                </li>
+
+                <li class="nav-item has-submenu">
+                    <a class="nav-link toggle-submenu d-flex justify-content-between align-items-center" href="#">
+                        <span>Categorias</span>
+                        <i class='bx bx-chevron-down' style="transition: transform 0.3s;"></i>
+                    </a>
+
+                    <ul class="submenu">
+                        <li><a href="#hortifruti">Hortifrúti</a></li>
+                        <li><a href="#carnes">Carnes e Peixes</a></li>
+                        <li><a href="#bebidas">Bebidas</a></li>
+                        <li><a href="#mercearia">Mercearia</a></li>
+                        <li><a href="#padaria">Padaria</a></li>
+                        <li><a href="#limpeza">Limpeza</a></li>
+                        <li>
+                            <hr class="dropdown-divider border-secondary my-1">
+                        </li>
+                        <li><a href="./produto.html">Ver Tudo</a></li>
+                    </ul>
+                </li>
+
                 <hr>
                 <li class="login-item">
                     <a href="./login.html" class="btn-entrar">Entrar / Cadastrar</a>
@@ -109,56 +136,11 @@
             <div class="section-header">
                 <h2 class="section-title">Categorias</h2>
             </div>
-
-            <div class="row row-cols-4 row-cols-md-4 row-cols-desktop-8 g-2 categories-row">
-
+            
+            <div class="row row-cols-3 row-cols-md-6 g-3 categories-row">
+            
                 <div class="col">
-                    <a href="#" class="category-card text-decoration-none text-dark">
-                        <div class="category-icon">
-                            <i class="bx bxs-lemon"></i>
-                        </div>
-                        <p class="mb-0">Frutas</p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="#" class="category-card text-decoration-none text-dark">
-                        <div class="category-icon">
-                            <i class="bx bxs-drink"></i>
-                        </div>
-                        <p class="mb-0">Bebidas</p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="#" class="category-card text-decoration-none text-dark">
-                        <div class="category-icon">
-                            <i class="bx bxs-cookie"></i>
-                        </div>
-                        <p class="mb-0">Padaria</p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="#" class="category-card text-decoration-none text-dark">
-                        <div class="category-icon">
-                            <i class="bx bxs-fridge"></i>
-                        </div>
-                        <p class="mb-0">Carnes</p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="#" class="category-card text-decoration-none text-dark">
-                        <div class="category-icon">
-                            <i class="bx bxs-spray-can"></i>
-                        </div>
-                        <p class="mb-0">Limpeza</p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="#" class="category-card text-decoration-none text-dark">
+                    <a href="#hortifruti" class="category-card text-decoration-none text-dark">
                         <div class="category-icon">
                             <i class='bx bxs-leaf'></i>
                         </div>
@@ -167,20 +149,48 @@
                 </div>
 
                 <div class="col">
-                    <a href="#" class="category-card text-decoration-none text-dark">
+                    <a href="#carnes" class="category-card text-decoration-none text-dark">
                         <div class="category-icon">
-                            <i class='bx bxs-purchase-tag'></i>
+                            <i class="bx bxs-fridge"></i>
                         </div>
-                        <p class="mb-0">Ofertas</p>
+                        <p class="mb-0">Carnes</p>
+                    </a>
+                </div>
+                
+                <div class="col">
+                    <a href="#bebidas" class="category-card text-decoration-none text-dark">
+                        <div class="category-icon">
+                            <i class="bx bxs-drink"></i>
+                        </div>
+                        <p class="mb-0">Bebidas</p>
                     </a>
                 </div>
 
                 <div class="col">
-                    <a href="#" class="category-card text-decoration-none text-dark">
+                    <a href="#mercearia" class="category-card text-decoration-none text-dark">
                         <div class="category-icon">
-                            <i class='bx bxs-basket'></i>
+                            <i class='bx bxs-shopping-bag-alt'></i>
                         </div>
-                        <p class="mb-0">Mais Vendidos</p>
+                        <p class="mb-0">Mercearia</p>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="#padaria" class="category-card text-decoration-none text-dark">
+                        <div class="category-icon">
+                            <i class="bx bxs-cookie"></i>
+                        </div>
+                        <p class="mb-0">Padaria</p>
+                    </a>
+                </div>
+
+
+                <div class="col">
+                    <a href="#limpeza" class="category-card text-decoration-none text-dark">
+                        <div class="category-icon">
+                            <i class="bx bxs-spray-can"></i>
+                        </div>
+                        <p class="mb-0">Limpeza</p>
                     </a>
                 </div>
 
@@ -188,7 +198,7 @@
         </section>
 
         <!-- Produtos em Destaque -->
-        <section class="featured-products">
+        <section class="featured-products" id="">
             <div class="section-header">
 
                 <h2 class="section-title">Produtos em Destaque</h2>
@@ -208,8 +218,8 @@
                 </div>
                 <!-- Card Real -->
                 <div class="card product-card card-real d-none" style="width: 14rem;" data-id="sprite-350"
-                    data-name="Sprite 350ml" data-price="3.99" data-img="./img/Produtos/Sprite-Lata.png">
-                    <img src="./img/Produtos/Sprite-Lata.png" class="card-img-top" alt="Sprite">
+                    data-name="Sprite 350ml" data-price="3.99" data-img="./img/produtos/Sprite-Lata.png">
+                    <img src="./img/produtos/Sprite-Lata.png" class="card-img-top" alt="Sprite">
                     <div class="card-body">
                         <h5 class="card-title">Sprite 350ml</h5>
                         <p class="card-text">Lata - Limão</p>
@@ -231,8 +241,8 @@
                 </div>
                 <!-- Card Real -->
                 <div class="card product-card card-real d-none" style="width: 14rem;" data-id="Arroz-Camil"
-                    data-name="Arroz Camil 5kg" data-price="21.99" data-img="./img/Produtos/Arroz.webp">
-                    <img src="./img/Produtos/Arroz.webp" class="card-img-top" alt="Arroz Camil">
+                    data-name="Arroz Camil 5kg" data-price="21.99" data-img="./img/produtos/arroz-camil-5kg.webp">
+                    <img src="./img/produtos/arroz-camil-5kg.webp" class="card-img-top" alt="Arroz Camil">
                     <div class="card-body">
                         <h5 class="card-title">Arroz Camil 5kg</h5>
                         <p class="card-text">Tipo 1</p>
@@ -254,8 +264,8 @@
                 </div>
                 <!-- Card Real -->
                 <div class="card product-card card-real d-none" style="width: 14rem;" data-id="Cafe-Pilao"
-                    data-name="Café Pilão" data-price="23.99" data-img="./img/Produtos/Café.webp">
-                    <img src="./img/Produtos/Café.webp" class="card-img-top" alt="Café Pilão">
+                    data-name="Café Pilão" data-price="23.99" data-img="./img/produtos/cafe-pilao-500g.webp">
+                    <img src="./img/produtos/cafe-pilao-500g.webp" class="card-img-top" alt="Café Pilão">
                     <div class="card-body">
                         <h5 class="card-title">Café Pilão</h5>
                         <p class="card-text">Tradicional 500g</p>
@@ -277,8 +287,8 @@
                 </div>
                 <!-- Card Real -->
                 <div class="card product-card card-real d-none" style="width: 14rem;" data-id="Monster-473"
-                    data-name="Monster 473ml" data-price="15.99" data-img="./img/Produtos/Monster-Lata.png">
-                    <img src="./img/Produtos/Monster-Lata.png" class="card-img-top" alt="Monster">
+                    data-name="Monster 473ml" data-price="15.99" data-img="./img/produtos/monster-lata.png">
+                    <img src="./img/produtos/monster-lata.png" class="card-img-top" alt="Monster">
                     <div class="card-body">
                         <h5 class="card-title">Monster 473ml</h5>
                         <p class="card-text">Lata - Tradicional</p>
@@ -300,8 +310,8 @@
                 </div>
                 <!-- Card Real -->
                 <div class="card product-card card-real d-none" style="width: 14rem;" data-id="Leite-1l"
-                    data-name="Leite Integral Italac 1L" data-price="7.49" data-img="./img/Produtos/Leite.webp">
-                    <img src="./img/Produtos/Leite.webp" class="card-img-top" alt="Leite UHT Italac">
+                    data-name="Leite Integral Italac 1L" data-price="7.49" data-img="./img/produtos/Leite.webp">
+                    <img src="./img/produtos/Leite.webp" class="card-img-top" alt="Leite UHT Italac">
                     <div class="card-body">
                         <h5 class="card-title">Leite UHT Italac</h5>
                         <p class="card-text">Integral 1L</p>
@@ -316,7 +326,7 @@
         </section>
 
         <!-- Ofertas -->
-        <section class="offers">
+        <section id="offers" class="offers">
             <div class="section-header">
                 <h2 class="section-title">Ofertas Imperdíveis</h2>
             </div>
@@ -326,19 +336,19 @@
                         <h3>Até 50% OFF</h3>
                         <p>No setor de hortifruti</p>
                     </div>
-                    <a href="#" class="btn btn-light btn-sm fw-bold">Aproveitar</a>
+                    <a href="#hortifruti" class="btn btn-light btn-sm fw-bold">Aproveitar</a>
                 </div>
                 <div class="offer-banner bg-warning text-dark">
                     <div class="banner-text">
                         <h3>Combo Refresco</h3>
                         <p>Bebidas com desconto</p>
                     </div>
-                    <a href="#" class="btn btn-dark btn-sm fw-bold">Ver Mais</a>
+                    <a href="#bebidas" class="btn btn-dark btn-sm fw-bold">Ver Mais</a>
                 </div>
             </div>
         </section>
 
-        <section class="top-deals-section">
+        <section id="topdeals" class="top-deals-section">
             <div class="section-header">
                 <hr>
                 <h2 class="section-title">Mais Procurados</h2>
@@ -347,8 +357,8 @@
             <div class="deals-list">
 
                 <div class="deal-item product-card" data-id="sprite-350" data-name="Sprite 350ml" data-price="3.99"
-                    data-img="./img/Produtos/Sprite-Lata.png">
-                    <img src="./img/Produtos/Sprite-Lata.png" alt="Sprite">
+                    data-img="./img/produtos/Sprite-Lata.png">
+                    <img src="./img/produtos/Sprite-Lata.png" alt="Sprite">
                     <div class="deal-info">
                         <h4>Sprite 350ml</h4>
                         <p>R$ 3,99</p>
@@ -359,8 +369,8 @@
                 </div>
 
                 <div class="deal-item product-card" data-id="arroz-5kg" data-name="Arroz Camil 5kg" data-price="21.99"
-                    data-img="./img/Produtos/Arroz.webp">
-                    <img src="./img/Produtos/Arroz.webp" alt="Arroz">
+                    data-img="./img/produtos/arroz-camil-5kg.webp">
+                    <img src="./img/produtos/arroz-camil-5kg.webp" alt="Arroz">
                     <div class="deal-info">
                         <h4>Arroz Camil 5kg</h4>
                         <p>R$ 21,99</p>
@@ -371,8 +381,8 @@
                 </div>
 
                 <div class="deal-item product-card" data-id="cafe-500g" data-name="Café Pilão 500g" data-price="23.99"
-                    data-img="./img/Produtos/Café.webp">
-                    <img src="./img/Produtos/Café.webp" alt="Café">
+                    data-img="./img/produtos/cafe-pilao-500g.webp">
+                    <img src="./img/produtos/cafe-pilao-500g.webp" alt="Café">
                     <div class="deal-info">
                         <h4>Café Pilão 500g</h4>
                         <p>R$ 23,99</p>
@@ -383,8 +393,8 @@
                 </div>
 
                 <div class="deal-item product-card" data-id="monster-473" data-name="Monster 473ml" data-price="15.99"
-                    data-img="./img/Produtos/Monster-Lata.png">
-                    <img src="./img/Produtos/Monster-Lata.png" alt="Monster">
+                    data-img="./img/produtos/monster-lata.png">
+                    <img src="./img/produtos/monster-lata.png" alt="Monster">
                     <div class="deal-info">
                         <h4>Monster 473ml</h4>
                         <p>R$ 15,99</p>
@@ -394,6 +404,54 @@
                     </a>
                 </div>
 
+            </div>
+        </section>
+
+        <section id="hortifruti" class="container my-5">
+            <div class="section-header">
+                <h2 class="section-title">Hortifrúti</h2>
+            </div>
+            <div class="row row-cols-2 row-cols-md-4 g-4">
+            </div>
+        </section>
+
+        <section id="carnes" class="container my-5">
+            <div class="section-header">
+                <h2 class="section-title">Carnes e Peixes</h2>
+            </div>
+            <div class="row row-cols-2 row-cols-md-4 g-4">
+            </div>
+        </section>
+
+        <section id="bebidas" class="container my-5">
+            <div class="section-header">
+                <h2 class="section-title">Bebidas</h2>
+            </div>
+            <div class="row row-cols-2 row-cols-md-4 g-4">
+            </div>
+        </section>
+
+        <section id="mercearia" class="container my-5">
+            <div class="section-header">
+                <h2 class="section-title">Mercearia</h2>
+            </div>
+            <div class="row row-cols-2 row-cols-md-4 g-4">
+            </div>
+        </section>
+
+        <section id="padaria" class="container my-5">
+            <div class="section-header">
+                <h2 class="section-title">Padaria</h2>
+            </div>
+            <div class="row row-cols-2 row-cols-md-4 g-4">
+            </div>
+        </section>
+
+        <section id="limpeza" class="container my-5">
+            <div class="section-header">
+                <h2 class="section-title">Limpeza</h2>
+            </div>
+            <div class="row row-cols-2 row-cols-md-4 g-4">
             </div>
         </section>
 
@@ -443,7 +501,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer text-white-50">
         <div class="container py-5">
             <div class="row g-4">
 
@@ -451,7 +509,8 @@
                     <div class="footer-logo text-white fw-bold fs-4 mb-3">
                         <img src="./img/Logo.png" alt="Bom Preço">
                     </div>
-                    <p class="small">O mercado mais próximo de você, agora na tela do seu celular.</p>
+                    <p class="small text-white-50">O mercado mais próximo de você, agora na tela do seu celular. Compre
+                        online e receba em casa ou retire na loja.</p>
                     <div class="footer-social d-flex gap-3 fs-4 mt-3">
                         <a href="#" class="text-white-50"><i class='bx bxl-facebook-circle'></i></a>
                         <a href="#" class="text-white-50"><i class='bx bxl-instagram-alt'></i></a>
@@ -460,44 +519,54 @@
                 </div>
 
                 <div class="col-6 col-md-3">
-                    <h5 class="text-white mb-3">Sobre Nós</h5>
-                    <div class="footer-links d-flex flex-column gap-2">
-                        <a href="#" class="text-white-50 text-decoration-none">Nossa História</a>
-                        <a href="#" class="text-white-50 text-decoration-none">Trabalhe Conosco</a>
-                        <a href="#" class="text-white-50 text-decoration-none">Políticas de Privacidade</a>
-                        <a href="#" class="text-white-50 text-decoration-none">Termos de Uso</a>
+                    <h5 class="text-white mb-3">Entrega & Retirada</h5>
+                    <div class="footer-links d-flex flex-column gap-2 small">
+                        <span><i class='bx bx-time-five me-2'></i><strong>Loja Física:</strong> Diariamente, das 07h às
+                            22h</span>
+                        <span><i class='bx bx-cycling me-2'></i><strong>Delivery:</strong> Pedidos até as 19h entregues
+                            no mesmo dia</span>
+                        <span><i class='bx bx-package me-2'></i><strong>Clique & Retire:</strong> Retire grátis na loja
+                            em até 1h</span>
+                        <a href="#" class="text-white-50 text-decoration-none mt-2"><i
+                                class='bx bx-map-pin me-1'></i>Consultar bairros atendidos</a>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-3">
                     <h5 class="text-white mb-3">Ajuda e Suporte</h5>
                     <div class="footer-links d-flex flex-column gap-2">
-                        <a href="#" class="text-white-50 text-decoration-none">Central de Atendimento</a>
-                        <a href="#" class="text-white-50 text-decoration-none">Trocas e Devoluções</a>
-                        <a href="#" class="text-white-50 text-decoration-none">Prazos de Entrega</a>
-                        <a href="#" class="text-white-50 text-decoration-none">Perguntas Frequentes</a>
+                        <a href="#contato" class="text-white-50 text-decoration-none">Central de Atendimento</a>
+                        <a href="./resources/politica-privacidade.pdf" target="_blank"
+                            class="text-white-50 text-decoration-none">Políticas de Privacidade</a>
+                        <a href="./resources/termos-uso.pdf" target="_blank"
+                            class="text-white-50 text-decoration-none">Termos de Uso</a>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-3">
                     <h5 class="text-white mb-3">Formas de Pagamento</h5>
-                    <div class="footer-payments d-flex flex-wrap gap-2 fs-2 text-white">
-                        <img src="./img/pix.svg" alt="PIX">
-                        <i class='bx bx-credit-card' title="Cartão de Crédito"></i>
-                        <i class='bx bxs-barcode' title="Boleto"></i>
+                    <div class="footer-payments d-flex flex-wrap gap-3 fs-2 text-white mb-3">
+                        <i class='bx bx-qr-scan' title="Pix"></i>
+                        <i class='bx bx-credit-card' title="Cartões de Crédito / Débito"></i>
+                        <i class='bx bxs-wallet' title="Vale Alimentação (Sodexo, Alelo, Ticket)"></i>
                     </div>
+
                     <h5 class="text-white mb-2 mt-4">Contato</h5>
                     <div class="footer-contact d-flex flex-column gap-1 small">
-                        <span><i class='bx bx-phone me-2'></i>(11) 99999-9999</span>
-                        <span><i class='bx bx-envelope me-2'></i>suporte@mercado.com</span>
+                        <span><i class='bx bx-phone me-2'></i>(11) 4004-0000</span>
+                        <span><i class='bx bxl-whatsapp me-2'></i>(11) 99999-9999</span>
+                        <span><i class='bx bx-envelope me-2'></i>suporte@bompreco.com</span>
                     </div>
                 </div>
 
             </div>
 
             <hr class="mt-4 border-secondary">
-            <div class="copyright-section text-center small">
-                &copy; 2026 Mercado Bom Preço. Todos os direitos reservados.
+
+            <div class="copyright-section text-center small text-white-50 d-flex flex-column gap-1">
+                <span>&copy; 2026 Mercado Bom Preço. Todos os direitos reservados.</span>
+                <span>BOM PREÇO SUPERMERCADOS LTDA - CNPJ: 00.000.000/0001-00</span>
+                <span>Av. Principal do Bairro, 1234 - São Paulo/SP - CEP: 01000-000</span>
             </div>
         </div>
     </footer>

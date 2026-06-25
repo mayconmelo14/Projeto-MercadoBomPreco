@@ -34,18 +34,40 @@ document.addEventListener("DOMContentLoaded", function () {
 // Dropdown menu Aparece/Desaparece
 const menuToggle = document.getElementById('menu-toggle');
 const dropdownMenu = document.querySelector('.dropdown-menu');
+const menuIcon = menuToggle.querySelector('i');
 
 // Evento: clique no ícone do menu
-menuToggle.addEventListener('click', () => {
-    dropdownMenu.classList.toggle('active');
+menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    const isNowActive = dropdownMenu.classList.toggle('active');
+
+    if (isNowActive) {
+        menuIcon.classList.replace('bx-menu', 'bx-x');
+    } else {
+        menuIcon.classList.replace('bx-x', 'bx-menu');
+        document.querySelector('.has-submenu').classList.remove('submenu-active');
+    }
 });
 
 // Fecha menu ao clicar em algum dos links
-const menuLinks = document.querySelectorAll('.dropdown-menu a');
+const menuLinks = document.querySelectorAll('.dropdown-menu ul > li > a:not(.toggle-submenu)');
+
 menuLinks.forEach(link => {
     link.addEventListener('click', () => {
         dropdownMenu.classList.remove('active');
+        menuIcon.classList.replace('bx-x', 'bx-menu');
+        document.querySelector('.has-submenu').classList.remove('submenu-active');
     });
+});
+
+
+
+//Menu Categorias
+document.querySelector('.toggle-submenu').addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.parentElement.classList.toggle('submenu-active');
 });
 
 // Carrinho
@@ -56,15 +78,26 @@ const cartSidebar = document.getElementById('cart-sidebar');
 const cartClose = document.getElementById('cart-close');
 
 // Abre o carrinho
-cartToggle.addEventListener('click', () => {
-    cartSidebar.classList.add('active');
-    // Fecha o menu se ele estiver aberto
-    dropdownMenu.classList.remove('active');
+cartToggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    cartSidebar.classList.toggle('active');
 });
 
 // Fecha o carrinho no botão X
 cartClose.addEventListener('click', () => {
     cartSidebar.classList.remove('active');
+});
+
+document.addEventListener('click', function (e) {
+    if (dropdownMenu.classList.contains('active') && !dropdownMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        dropdownMenu.classList.remove('active');
+        menuIcon.classList.replace('bx-x', 'bx-menu');
+        document.querySelector('.has-submenu').classList.remove('submenu-active');
+    }
+
+    if (cartSidebar.classList.contains('active') && !cartSidebar.contains(e.target) && !cartToggle.contains(e.target)) {
+        cartSidebar.classList.remove('active');
+    }
 });
 
 // Quantidade Carrinho
@@ -146,19 +179,19 @@ btnCancelDelete.addEventListener('click', () => {
 btnConfirmDelete.addEventListener('click', () => {
     if (itemParaRemover) {
         itemParaRemover.remove();
-        
+
         // Recalcula os valores da tela imediatamente
-        atualizarTotalCarrinho(); 
-        
+        atualizarTotalCarrinho();
+
         // Checa se ainda restou algum produto no carrinho
         const itensRestantes = cartItemsContainerElement.querySelectorAll('.cart-item');
-        
+
         // Se zerou tudo, fecha a gaveta do carrinho automaticamente
         if (itensRestantes.length === 0) {
             document.getElementById('cart-sidebar').classList.remove('active');
         }
     }
-    
+
     // Fecha o modal de confirmação em qualquer situação
     deleteModal.classList.remove('active');
     itemParaRemover = null;
@@ -176,16 +209,16 @@ deleteModal.addEventListener('click', (e) => {
 document.addEventListener('click', (e) => {
     // Intercepta o clique no botão com a classe que adicionamos
     if (e.target.classList.contains('btn-add-to-cart') || e.target.closest('.btn-add-to-cart')) {
-        
+
         // Evita que o link '#' jogue a página para o topo
-        e.preventDefault(); 
-        
+        e.preventDefault();
+
         // Busca o botão correto, mesmo se o clique foi no ícone do carrinho
         const botao = e.target.classList.contains('btn-add-to-cart') ? e.target : e.target.closest('.btn-add-to-cart');
-        
+
         // Acha o card do produto mais próximo (.product-card)
         const productCard = botao.closest('.product-card');
-        
+
         // Captura os dados dos atributos data- configurados
         const id = productCard.getAttribute('data-id');
         const name = productCard.getAttribute('data-name');
@@ -238,7 +271,7 @@ document.addEventListener('click', (e) => {
                         <i class='bx bx-trash remove-item'></i>
                     </div>
                 `;
-                
+
                 // Coloca o item no final da lista do carrinho
                 cartItemsContainerElement.insertAdjacentHTML('beforeend', novoItemHTML);
             }
