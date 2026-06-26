@@ -117,10 +117,10 @@
             <div class="swiper bannerSwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="./img/Banner1.png" alt="Banner 1">
+                        <img src="./img/Banner-desktop1.png" alt="Banner 1">
                     </div>
                     <div class="swiper-slide">
-                        <img src="./img/Banner2.png" alt="Quarta-Feira de Ofertas">
+                        <img src="./img/Banner-desktop2.png" alt="Quarta-Feira de Ofertas">
                     </div>
                     <div class="swiper-slide">
                         <img src="..." alt="Cartão Bom Preço">
@@ -136,9 +136,9 @@
             <div class="section-header">
                 <h2 class="section-title">Categorias</h2>
             </div>
-            
+
             <div class="row row-cols-3 row-cols-md-6 g-3 categories-row">
-            
+
                 <div class="col">
                     <a href="#hortifruti" class="category-card text-decoration-none text-dark">
                         <div class="category-icon">
@@ -156,7 +156,7 @@
                         <p class="mb-0">Carnes</p>
                     </a>
                 </div>
-                
+
                 <div class="col">
                     <a href="#bebidas" class="category-card text-decoration-none text-dark">
                         <div class="category-icon">
@@ -331,7 +331,7 @@
                 <h2 class="section-title">Ofertas Imperdíveis</h2>
             </div>
             <div class="offer-banners-container">
-                <div class="offer-banner bg-danger text-white">
+                <div class="offer-banner text-white">
                     <div class="banner-text">
                         <h3>Até 50% OFF</h3>
                         <p>No setor de hortifruti</p>
@@ -411,8 +411,34 @@
             <div class="section-header">
                 <h2 class="section-title">Hortifrúti</h2>
             </div>
-            <div class="row row-cols-2 row-cols-md-4 g-4">
+                <div class="products-carousel">
+
+                <!-- Skeleton -->
+                <div class="card product-card card-skeleton placeholder-glow" style="width: 14rem;">
+                    <div class="placeholder col-12" style="height: 160px;"></div>
+                    <div class="card-body">
+                        <h5 class="card-title placeholder-glow"><span class="placeholder col-9"></span></h5>
+                        <p class="card-text placeholder-glow"><span class="placeholder col-4"></span></p>
+                        <p class="product-price placeholder-glow"><span class="placeholder col-7"></span></p>
+                        <a href="#" class="btn btn-primary disabled placeholder col-10"></a>
+                    </div>
+                </div>
+
+                <!-- Card Real -->
+                <div class="card product-card card-real d-none" style="width: 14rem;" data-id="Tomate"
+                    data-name="Tomate Italiano Kg" data-price="7.49" data-img="./img/produtos/tomate-italiano.png">
+                    <img src="./img/produtos/tomate-italiano.png" class="card-img-top" alt="Tomate">
+                    <div class="card-body">
+                        <h5 class="card-title">Tomate Italiano</h5>
+                        <p class="card-text">Selecionados</p>
+                        <p class="product-price"><span>R$ 9,99kg</span>R$ 7,49/kg</p>
+                        <a href="#" class="btn btn-primary btn-add-to-cart">Adicionar ao Carrinho <i
+                                class='bx bxs-cart-add'></i></a>
+                    </div>
+                </div>
+
             </div>
+
         </section>
 
         <section id="carnes" class="container my-5">
